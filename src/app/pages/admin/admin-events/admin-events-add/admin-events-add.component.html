@@ -1,0 +1,66 @@
+
+<div class="container">
+    <div class="main">
+    
+      <h3>Add Event</h3>
+      <label>All of These Fields are Required</label>
+      <form (ngSubmit)="addEvent(f)" #f="ngForm">
+      <div class="form-group">
+      <label>Event Image</label><br>
+      <label>*Image must be 1920x1920</label><br>
+      <img [src] = "PhotoFilePath">
+      <input type="file"
+      id = "PhotoFileName"
+      class="form-control"
+      name = "PhotoFileName"
+      required
+      (change)="uploadPhoto($event)">
+      <label>Event Name</label>
+       <input 
+       type = "text"
+       id="eventName"
+       class="form-control"
+       ngModel
+       name="eventName"
+       required
+      >
+      </div>
+      <div>
+       <label>Event Link </label>
+       <input 
+       type = "text"
+       id="eventLink"
+       class="form-control"
+       ngModel
+       name="eventLink"
+       required>
+      </div>
+      <div>
+        <label>Stard Date - End Date</label><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date"
+            ngModel
+            name="StartDate"
+            required>
+            <input matEndDate placeholder="End date" 
+            ngModel
+            name="EndDate"
+            required>
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+       </div>
+      <div>
+        <button type="submit" class = "btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    </div>
+
+
+    </div>
+         
+  

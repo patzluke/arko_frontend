@@ -1,0 +1,73 @@
+<section id="about-us" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <h2> About Us</h2>
+            <mat-tab-group mat-align-tabs="center" animationDuration="2000ms">
+                <mat-tab label="Who is UAPSA?"> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                        deserunt mollit anim id est laborum.</p> </mat-tab>
+                <mat-tab label="Mission"> 
+                    <p> The United Architects of the Philippines Student Auxiliary – University of 
+                        Santo Tomas Chapter (UAPSA-UST), as a recognized student organization, 
+                        commits to provide the members the architectural knowledge and 
+                        opportunities essential to their professional and academic achievement 
+                        guided by the university’s core values – compassion, commitment, and 
+                        competence – and practice dedication to serving the church and the 
+                        community.
+                    </p> </mat-tab>
+                <mat-tab label="Vision"> 
+                    <p>
+                        As an accredited organization of the United Architects of the Philippines, 
+                        the United Architects of the Philippines Student Auxiliary – University of 
+                        Santo Tomas (UAPSA-UST) under this Catholic institution envisions to produce 
+                        globally competitive Thomasian architecture students who execute Thomasian 
+                        values and equipped with professional and moral formation dedication to 
+                        service for social transformation.
+                    </p>
+                </mat-tab>
+                <mat-tab label="History of UAPSA">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                        qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </mat-tab>
+                <mat-tab label = "Join Us!">
+                    <br>
+                    <button class="button-two wow fadeInUp" data-wow-delay="1.3s"(click)="appForm()"><span>Application Form</span></button>
+                </mat-tab>
+                <mat-tab label="Get to Know the Team!" > 
+                    <br>
+                    
+                    <button mat-raised-button (click)="openDialog()">Team Members</button>  
+                </mat-tab>
+              </mat-tab-group>
+        </div>
+    </div>
+</section>
+<ng-template #callAPIDialog>
+<div class="center">
+<owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let team of teams;">
+    <ng-template carouselSlide>
+        <div class="card">
+            <img  [src]="imageURL+team.PhotoFileName" alt="">
+            <h2 class="card-title">{{team.name}}</h2>
+            <div>{{team.position}}</div>
+            <div class="card-price">{{team.section}}</div>
+            <p>{{team.description}}</p>
+        </div>
+    </ng-template>
+    </ng-container>
+</owl-carousel-o>
+</div>
+</ng-template>

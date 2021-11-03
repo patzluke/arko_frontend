@@ -1,0 +1,70 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Add Account</h3>
+      <form (ngSubmit)="addAccount(f)" #f="ngForm">
+        <div>
+          <label>All of These Fields are Required</label><br>
+          <label>*Image must be 1x1</label><br>
+          <label>Account Image</label><br>
+          <img [src]="PhotoFilePath">
+          <input type="file"
+          id = "PhotoFileName"
+          class="form-control"
+          name = "PhotoFileName"
+          required
+         (change)="uploadPhoto($event)">
+          <label>First Name</label>
+          <input 
+          type="text"
+          id = "firstname"
+          class="form-control"
+          ngModel
+          name="firstname"
+          required
+          #firstname = "ngModel"
+          pattern="[a-z A-Z]+"
+          >
+          <span class ="help-block" *ngIf="firstname.touched && firstname.errors?.pattern">Letters Only</span>
+        </div>
+        <div>
+        <label>Last Name</label>
+        <input 
+        type="text"
+        id = "lastname"
+        class="form-control"
+        ngModel
+        name="lastname"
+        required
+        #lastname = "ngModel"
+        pattern="[a-zA-Z]+"
+        >
+        <span class ="help-block" *ngIf="lastname.touched && lastname.errors?.pattern">Letters Only</span>
+      </div>
+      <div>
+      <label>Email</label>
+      <input 
+      type = "email"
+      id="email"
+      class="form-control"
+      ngModel
+      name="email"
+      required
+      email
+       #email = "ngModel"
+       pattern=".+@ust.edu.ph">
+     </div>
+     <span class ="help-block" *ngIf="!email.valid && email.touched">Pls Enter a Valid UST Email Address</span>
+    
+      <div>
+        <button class="btn btn-primary" 
+        type="submit"
+        [disabled] = "!f.valid">Add Account</button>
+      </div>
+
+      </form>
+
+    </div>
+    </div>
+         
+  

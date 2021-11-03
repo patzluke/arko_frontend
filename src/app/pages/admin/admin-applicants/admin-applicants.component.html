@@ -1,0 +1,54 @@
+
+
+<div class="container">
+    <div class="main">
+        <h2>Applicant List</h2>
+        <table #userTable>
+          <tr>
+            <th>Name</th>
+            <th>UST Email</th>
+            <th>Student No.</th>
+            <th></th>
+          </tr>
+          <tr
+          *ngFor = "let applicant of applicants | paginate: { itemsPerPage: 5, currentPage: p }">
+         <td>
+           {{applicant.name}}
+        </td>
+        <td>
+          {{applicant.ustEmail}}
+        </td>
+        <td>
+          {{applicant.studentNo}}
+        </td>
+        <td>
+          <div>
+            <button mat-raised-button (click)="openDialog(applicant.id)">Applicant Details</button>  
+            <ng-template #callAPIDialog>
+              Year: {{year}}<br>
+              Section: {{section}}<br>
+              Sex: {{sex}}<br>
+              BirthDate: {{birthDate}}<br>
+              Age: {{age}}<br>
+              Membershitp Status: {{membershipStatus}}<br>
+              Contact: {{contact}}<br>
+              Address: {{address}}<br>
+              FacebookLink {{facebookLink}}<br><br>
+              What are you looking forward to in UAPSA?:<br>
+              {{lookingForward}}<br><br>
+              If given the chance, what type of events would you create for UAPSA - UST? Share us your innovative ideas!:<br>
+              {{typeOfEvents}}<br><br>
+              What topics are you interested for us to cover in our online webinars and talks?:<br>
+              {{topicsIntrested}}    
+           </ng-template>
+          </div>
+        </td>
+          </tr>
+          
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+        <button (click)="exportElmToExcel(applicants)">Archive Applicants</button>
+        
+    </div>
+   
+  </div>

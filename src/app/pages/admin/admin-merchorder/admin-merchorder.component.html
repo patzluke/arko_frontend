@@ -1,0 +1,47 @@
+
+
+<div class="container">
+    <div class="main">
+        <h2>Merch Order List</h2>
+        <table #userTable>
+          <tr>
+            <th>Name</th>
+            <th>Merch Name</th>
+            <th>Quantity</th>
+          </tr>
+          <tr
+          *ngFor = "let order of orders | paginate: { itemsPerPage: 5, currentPage: p }">
+         <td>
+           {{order.name}}
+        </td>
+        <td>
+          {{order.merchName}}
+        </td>
+        <td>
+          {{order.quantity}}
+        </td>
+        <td>
+          <div>
+            <button mat-raised-button (click)="openDialog(order.id)">Order Details</button>  
+            <ng-template #callAPIDialog>
+              Year: {{year}}<br>
+              Section: {{section}}<br>
+              Contact No.: {{contactNo}}<br>
+              Address: {{address}}<br>
+              Price: {{price}}<br>
+              Mode Of Payment: {{modeOfPayment}}<br>
+              Student No.: {{studentNo}}<br>
+              What kind of merchandise do you want next?<br>
+             {{whatMerchNext}}<br><br>
+    
+           </ng-template>
+          </div>
+        </td>
+          </tr>
+          
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+        <button (click)="exportElmToExcel(orders)">Archive Merch Orders</button>
+    </div>
+   
+  </div>

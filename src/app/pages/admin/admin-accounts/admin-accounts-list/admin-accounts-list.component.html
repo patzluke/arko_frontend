@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="main">
+        <h2>Accounts Management</h2>
+        <div class="right">
+          <a class="btn btn-primary" routerLink="add"> Add </a>
+        </div>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th> </th>
+          </tr>
+          <tr
+          *ngFor = "let account of accounts | paginate: { itemsPerPage: 5, currentPage: p }" >
+          
+         <td>
+           {{account.id}}
+         </td>
+         <td>
+           {{account.firstname}}
+        </td>
+        <td>
+          {{account.lastname}}
+        </td>
+        <td>
+          {{account.email}}
+        </td>
+         <td>
+         <a class="btn btn-primary" [routerLink]="['edit', account.id]" (click)="editAccounts">Edit</a>
+          <button class="btn btn-danger" (click)="deleteClick(account)">Delete</button>
+         </td>
+          </tr>
+          
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+      </div>
+    </div>
+   

@@ -1,0 +1,36 @@
+
+<div class="container">
+   
+    <div class="main">
+        <h2>Team Management</h2>
+        <div class="right">
+          <a class="btn btn-primary" routerLink="add"> Add </a>
+        </div>
+        <table>
+          <tr>
+            <th>Team Name</th>
+            <th>Team Position</th>
+            <th>Team Section</th>
+            <th> </th>
+          </tr>
+          <tr
+          *ngFor = "let team of teams | paginate: { itemsPerPage: 5, currentPage: p }">
+         <td>
+          {{team.name}}
+         </td>
+         <td>
+          {{team.position}}
+        </td>
+         <td>
+           {{team.section}}
+         </td>
+         <td>
+          <a class="btn btn-primary" [routerLink]="['edit', team.id]">Edit</a>
+          <button class="btn btn-danger" (click) = "deleteClick(team)">Delete</button>
+         </td>
+          </tr>
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+        
+    </div>
+  </div>

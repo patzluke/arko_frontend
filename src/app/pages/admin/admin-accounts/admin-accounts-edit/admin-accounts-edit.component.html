@@ -1,0 +1,55 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Edit Account</h3>
+      <div>
+        <label>First Name</label>
+        <input 
+        type = "text"
+        id = "firstname"
+        class="firstname"
+        [(ngModel)] = "firstname"
+        >           
+      </div>
+        <div>
+          <label>Last Name</label>
+          <input 
+          type = "text"
+          id = "lastname"
+          class="lastname"
+          [(ngModel)] = "lastname"
+          >           
+        </div>
+        <div>
+          <label>Email</label>
+          <input 
+          type = "text"
+          id = "email"
+          class="email"
+          [(ngModel)] = "email"
+          required
+          email>
+        </div>
+        <div>
+          <label>Article Image</label><br>
+          <label>*Image must be 1x1</label><br>
+          <img 
+          *ngIf = "PhotoFileName !== null && photoUpload == true"
+          [src] = "PhotoFileName"
+          >
+          <img 
+          *ngIf = "PhotoFilePath !== null && photoUpload == false"
+          [src] = "PhotoFilePath"
+          >
+         <input 
+          type = "file"
+          id = "PhotoFileName"
+          class="PhotoFileName"
+          (change)="uploadPhoto($event)">
+        </div>
+        <button class="submit"(click)="editAccounts()">Submit</button>
+      
+    </div>
+    </div>
+         
+  

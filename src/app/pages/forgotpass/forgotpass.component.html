@@ -1,0 +1,34 @@
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Change Password</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<form (ngSubmit)="forgotPass(f)" #f="ngForm">
+				<div class="group">
+					<label for="user" class="label">New Password</label>
+					<input 
+					id="password" 
+					type="text" 
+					class="input"
+					ngModel
+					name="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Confirm Password</label>
+					<input 
+					id="cpass" 
+					type="cpassword" 
+					class="input" 
+					data-type="password"
+					ngModel
+					name="cpassword">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Submit">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

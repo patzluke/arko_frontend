@@ -1,0 +1,37 @@
+<html>
+  <body>
+    
+<div class="category">
+<input type="radio" name="filter" id="all" checked (change)="allFunc($event)"><label for="all">All</label>
+<input type="radio" [(ngModel)]="ari" name="filter" id="Arizona" value = "Arizona" (change)="testFunc($event)"><label for="Arizona" >Arizona</label>
+<input type="radio" [(ngModel)]="cali" name="filter" id="California" value = "California" (change)="testFunc2($event)"><label for="California">California</label>
+<input type="radio" [(ngModel)]="nyc" name="filter" id="New York" value = "New York" (change)="testFunc3($event)"><label for="New York">New York</label>
+</div>
+
+<div class="container">
+  <a [routerLink]="['../']"><h2>Return</h2></a>
+    <div *ngFor="let showroom of showrooms | paginate: { itemsPerPage: 3, currentPage: p } let i = index " >
+        <a [routerLink]="['/Showroom', showroom.id, showroom.Title]">
+        <div class="card">
+          <div class="img-cover"><img [src]="imageURL + showroom.PhotoFileName"><div class="icon"><svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E%22%3E">
+      <path d="M0 9H22M12 1.5L20.9333 8.2C21.4667 8.6 21.4667 9.4 20.9333 9.8L12 16.5" stroke="black" stroke-width="3"/>
+      </svg>
+      </div></div>
+          <div class="desc">
+            <h1>{{showroom.Title}}</h1>
+            <p>{{showroom.AuthorName}}</p>
+            <a href ="">Bring me <svg width="19" height="14" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E%22%3E">
+      <path d="M0 9H22M12 1.5L20.9333 8.2C21.4667 8.6 21.4667 9.4 20.9333 9.8L12 16.5" stroke="white" stroke-width="3"/>
+      </svg></a>
+          </div>
+        </div>
+
+        </a>
+      </div>
+    </div>
+
+    <pagination-controls class="down" (pageChange)="p = $event"></pagination-controls>
+
+
+  </body>
+</html>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@600&family=Roboto:wght@700&display=swap');
+
+#speakers {
+    background: #f9f9f9;
+}
+
+#speakers h3 {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+#speakers h6 {
+  color: #666;
+  margin-top: 4px;
+}
+
+#speakers img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#speakers .col-md-3 {
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+}
+
+#speakers .speakers-wrapper {
+    background: #ffffff;
+    padding-bottom: 22px;
+}
+
+/*
+ *     Core Owl Carousel CSS File
+ *    v1.3.3
+ */
+
+
+
+.button-two {
+  width: auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ee9b00;
+  color: #fff;
+  }
+  .button-two span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+  }
+  .button-two span:after {
+      content: '»';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+  }
+  .button-two:hover span {
+      padding-right: 25px;
+  }
+  .button-two:hover span:after {
+      opacity: 1;
+      right: 0;
+  }
+
+  h2{
+      font-family: 'Asap', sans-serif;  
+  }
+
+  .mat-ink-bar {
+      background: #ee9b00;
+  }
+
+  .card {
+  
+    position: relative;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.63);
+    height: auto;
+    max-width: 300px;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 40px;
+    padding: 16px;
+  }
+  .card:hover .card-image {
+    transform: translatey(10px);
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 40px;
+    transition: transform 0.4s;
+   
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .card-price {
+    margin-bottom: 16px;
+  }
+  .card-price span {
+    text-decoration: line-through;
+    font-size: 12px;
+    color: #2021246b;
+    margin-left: 20px;
+  }
+  .card-action {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #A054C6;
+    color: #fff;
+    border-radius: 100px;
+    font-weight: bold;
+  }
+  .card-action:hover {
+    background-color: #b57ad3;
+  }
+
+  .center{
+    margin-left: 200px;
+  }
+
+  .owl-item{
+    margin: 0px;
+    padding: 0px;
+  }

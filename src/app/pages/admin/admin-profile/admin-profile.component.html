@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card profile-card">
+  
+      <figure>
+        <img
+          class="img-fluid img-profile"
+          alt="Card image"
+          *ngIf="PhotoFileName !== null && photoUpload == true"
+          [src]="PhotoFileName"
+          class="centerImage"
+        />
+        <img
+          class="img-fluid img-profile"
+          alt="Card image"
+          *ngIf="PhotoFilePath !== null && photoUpload == false"
+          [src]="PhotoFilePath"
+          class="centerImage"
+        />
+        <label class="centerImage" *ngIf="editMode == true">*Image must be 1x1</label><br>
+        <input
+          *ngIf="editMode == true"
+          type="file"
+          id="PhotoFileName"
+          class="centerImage"
+          (change)="uploadPhoto($event)"
+        />
+      </figure>
+  
+      <div class="card-block text-xs-center">
+        <div class="card-body pt-0">
+          <h5 class="card-title">
+            <div *ngIf="editMode == false">
+              <p align="center">{{ firstname }}</p>
+            </div>
+            <div *ngIf="editMode == true">
+                <label class="centerImage">First Name:</label>
+              <input
+                type="text"
+                id="firstname"
+                class="centerImage"
+                [(ngModel)]="firstname"
+              />
+            </div>
+  
+            <div *ngIf="editMode == false">
+              <p align="center">{{ lastname }}</p>
+            </div>
+            <div *ngIf="editMode == true">
+                <label class="centerImage">Last Name:</label>
+              <input
+                type="text"
+                id="lastname"
+                class="centerImage"
+                [(ngModel)]="lastname"
+              />
+            </div>
+          </h5>
+          <p class="card-text"></p>
+          <div *ngIf="editMode == false">
+            <p align="center">{{ email }}</p>
+          </div>
+          <div *ngIf="editMode == true">
+              <label class="centerImage">Email:</label>
+            <input
+              type="text"
+              id="email"
+              class="centerImage"
+              [(ngModel)]="email"
+            />
+          </div>
+  
+          <div *ngIf="editMode == false">
+            <button (click)="onEdit()" class="centerImage">Edit Details</button>
+          </div>
+  
+          <br>
+  
+          <div *ngIf="editMode == true">
+            <button (click)="editAccounts()" class="centerImage">
+              Done Editing Details
+            </button>
+  
+            <br>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

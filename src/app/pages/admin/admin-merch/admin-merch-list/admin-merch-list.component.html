@@ -1,0 +1,38 @@
+
+<div class="container">
+   
+    <div class="main">
+        <h2>Merchandise Management</h2>
+        <div class="right">
+          <a  routerLink = "add" class="btn btn-primary"> Add </a>
+        </div>
+        <table>
+        <thead>
+          <tr>
+            <th>Merch Name</th>
+            <th>Price</th>
+            <th> </th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+          *ngFor = "let merch of merchs | paginate: { itemsPerPage: 5, currentPage: p }"  >
+         <td>
+          {{merch.mname}}
+         </td>
+         <td>
+          {{merch.price}}
+        </td>
+         <td>
+          <a class="btn btn-primary" [routerLink]="['edit', merch.id]">Edit</a>
+          <button class="btn btn-danger" (click)="deleteClick(merch)">Delete</button>
+         </td>
+          </tr>
+        </tbody>
+      </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+    </div>
+   
+         
+  </div>

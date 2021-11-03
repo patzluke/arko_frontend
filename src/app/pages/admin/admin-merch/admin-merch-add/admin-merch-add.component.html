@@ -1,0 +1,61 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Add Merchandise</h3>
+      <label>All of These Fields are Required</label>
+      <form (ngSubmit)="addMerch(f)" #f="ngForm">
+      <div class="form-group">
+      <label>Merchandise Image</label><br>
+      <label>*Image must be 1920x1920</label><br>
+      <img [src]="PhotoFilePath">
+      <input type="file"
+      id = "PhotoFileName"
+      class="form-control"
+      ngModel 
+      name = "PhotoFileName"
+      required
+      (change)="uploadPhoto($event)">
+      <label>Merch Name</label>
+       <input 
+       type = "text"
+       id="mname"
+       class="form-control"
+       ngModel
+       name="mname"
+       required
+      >
+      </div>
+      <div>
+       <label>Price</label>
+       <input 
+       type = "number"
+       id="price"
+       class="form-control"
+       ngModel
+       name="price"
+       onkeypress="return event.charCode>=48 && event.charCode<=57"
+       required>
+      </div>
+      <div>
+       <label>Description</label>
+       <input 
+       type = "text"
+       id="desc"
+       class="form-control"
+       ngModel
+       name="desc"
+       required
+       >
+
+      </div>
+      <div>
+        <button type="submit" class = "btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    </div>
+
+
+    </div>
+         
+  

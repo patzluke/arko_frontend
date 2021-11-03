@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@600&family=Roboto:wght@700&display=swap');
+
+.custom-navbar {
+    margin-bottom: 0;
+    color: white;
+    background-color: var(--navbar-scroll);
+    transition: background-color 1s ease;
+    color: var(--navbar-scroll-text);
+    -webkit-box-shadow: var(--navbar-scroll-shadow);
+    box-shadow: var(--navbar-scroll-shadow);
+    }
+  
+    .custom-navbar .navbar-brand {
+    color: black;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 60px;
+    }
+  
+    .custom-navbar .nav li a {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    line-height: 40px;
+    }
+  
+    .custom-navbar .nav li a:hover {
+    background: transparent;
+    color: #ffa800;
+    transition: all .5s;
+    }
+  
+    .custom-navbar .navbar-nav > li > a:hover,
+    .custom-navbar .navbar-nav > li > a:focus {
+    background-color: transparent;
+    }
+  
+    .custom-navbar .nav li.active > a {
+    background-color: transparent;
+    }
+  
+    .custom-navbar .navbar-toggle {
+    border: none;
+    padding-top: 10px;
+    }
+  
+    .custom-navbar .navbar-toggle {
+    background-color: transparent;
+    }
+  
+    .custom-navbar .navbar-toggle .icon-bar {
+    background: #ffffff;
+    border-color: transparent;
+    }
+  
+    @media(min-width:768px) {
+      .custom-navbar {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+      }
+  
+    .custom-navbar.top-nav-collapse {
+        background: white;
+        padding: 0;;
+    }
+  }
+  
+  nav.stroke ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #ffa800;
+    height: 3px;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+  
+  nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all .5s;
+  }
+  nav ul li a:hover {
+    color: #ffa800;
+  }
+  
+  .container {
+    font-family: 'Asap', sans-serif;
+    font-weight: bold;
+    padding: 0 75px;
+    width: 100%;
+  }

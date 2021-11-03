@@ -1,0 +1,53 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Edit Merchandise</h3>
+        <div>
+          <label>Merchandsie Name</label>
+          <input 
+          type = "text"
+          id = "mname"
+          class="mname"
+          [(ngModel)] = "mname">
+          
+        </div>
+        <div>
+          <label>Price</label>
+          <input 
+          type = "number"
+          id = "price"
+          class="price"
+          [(ngModel)] = "price">
+        </div>
+        <div>
+            <label>Description</label>
+            <input 
+            type = "text"
+            id = "desc"
+            class="desc"
+            [(ngModel)] = "desc">
+          </div>
+          <div>
+            <label>Image</label><br>
+            <label>*Image must be 1920x1920</label><br>
+            <img 
+            *ngIf = "PhotoFileName !== null && photoUpload == true"
+            [src] = "PhotoFileName"
+            >
+            <img 
+            *ngIf = "PhotoFilePath !== null && photoUpload == false"
+            [src] = "PhotoFilePath"
+            >
+           <input 
+            type = "file"
+            id = "PhotoFileName"
+            class="PhotoFileName"
+            
+            (change)="uploadPhoto($event)">
+           
+          </div>
+        <button class="submit"(click)="editMerch()">Submit</button>
+    </div>
+    </div>
+         
+  

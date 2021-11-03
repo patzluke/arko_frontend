@@ -1,0 +1,51 @@
+<html>
+  <body>
+
+
+ 
+
+
+    <div class="lefty">
+      <a [routerLink]="['../']">Back</a>
+    </div>
+      <div class="inner-header flex">
+        <img src="assets/img/160X160 UAPSA LOGO.png" class="logo">
+      <div class="fonters">UAPSA UST Articles</div>
+      </div>
+
+ 
+
+
+
+<div class=" item mb-5" *ngFor="let article of articles  | paginate: { itemsPerPage: 3, currentPage: p }">
+
+  <a class="postheading" [routerLink]="['/article', article.id, article.title]">
+
+  <div class="card">
+
+    <div class="thumbnail"><img class="left" [src]="imageURL+article.PhotoFileName"/></div>
+
+    <div class="right">
+      <h1>{{article.title}}</h1>
+      <div class="author">
+        <h2>{{article.authorName}}</h2>
+      </div>
+      <div class="separator"></div>
+      <p>{{ article.desc }}</p>
+    </div>
+
+    <h5>{{article.dateCreated | date: 'dd'}}</h5>
+    <h6>{{article.dateCreated | date: 'MMMM'}}</h6>
+
+
+
+
+  </div>
+  </a>
+</div>
+
+<pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+
+
+</body>
+</html>

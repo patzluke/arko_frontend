@@ -1,0 +1,35 @@
+.sidenav {
+    height: 100%;
+    width: 160px;
+    
+
+    top: 0;
+    left: 0;
+    background-color: #111;
+
+    padding-top: 20px;
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ada3a3;
+    display: block;
+  }
+
+  .sidenav p{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1eded;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  ul {
+    list-style-type: none;
+   }

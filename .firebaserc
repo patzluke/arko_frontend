@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "arko-uapsa",
+    "arko-uapsa": "arko-uapsa"
+  },
+  "targets": {}
+}

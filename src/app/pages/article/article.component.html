@@ -1,0 +1,24 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+<main>
+    <section class="lp">
+  
+      <section class="lpheader">
+        <a [routerLink]="['/more']" class="button"><h3>Back to List of Articles</h3></a>
+      <h1>UAPSA UST</h1>
+      <p>{{thisArticle.desc}}</p>
+      </section>
+
+  <section class="lpgrid">
+    <img [src] = "imageURL+thisArticle.PhotoFileName" class="lpgridItemimage" alt="Null">
+      <div class="lpgridItem lpgridItemtext">
+        <p class="lpgridItemText-sm">UAPSA UST</p>
+        <h2 class="lpgridItemText-lg">{{thisArticle.title}}</h2>
+        <p class="lpgridItemText-md" [innerHTML]="thisArticle.content"></p>
+        <p class="lpgridItemText-sm lpgridItemText-sm-bw"><strong>{{thisArticle.authorName}}</strong> Created on {{thisArticle.dateCreated | date: 'dd/MMMM/yyyy'}}</p>
+     </div>
+      </section>
+    </section>
+</main>
+</body>

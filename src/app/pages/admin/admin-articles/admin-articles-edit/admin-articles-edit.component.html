@@ -1,0 +1,51 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Edit Article</h3>
+        <div>
+          <label>Article Title</label>
+          <input 
+          type = "text"
+          id = "title"
+          class="title"
+          [(ngModel)] = "title"
+        >
+        </div>
+        <div>
+          <label>Article Description</label>
+          <input 
+          type = "text"
+          id = "desc"
+          class="desc"
+          [(ngModel)] = "desc">
+        </div>
+        <div>
+          <label>Content</label>
+          <editor apiKey="b7q42n68x47rgyypfjthwfk087i3od17mzxvdlqhwsim800g" [init]="{plugins: 'link'}"
+          id="content"
+          outputFormat="html"
+         [(ngModel)]="content"
+         required></editor>
+        </div>
+        <div>
+          <label>Article Image</label><br>
+          <label>*Image must be 1920x1080</label><br>
+          <img 
+          *ngIf = "PhotoFileName !== null && photoUpload == true"
+          [src] = "PhotoFileName"
+          >
+          <img 
+          *ngIf = "PhotoFilePath !== null && photoUpload == false"
+          [src] = "PhotoFilePath"
+          >
+         <input 
+          type = "file"
+          id = "PhotoFileName"
+          class="PhotoFileName"
+          (change)="uploadPhoto($event)">
+        </div>
+        <button class="submit"(click)="editArticle()">Submit</button>
+    </div>
+    </div>
+         
+  

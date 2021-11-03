@@ -1,0 +1,164 @@
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+}
+
+.continer{
+  background-color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.continer h4{
+
+  text-align: center;
+  margin: 50px;
+}
+
+.form{
+  padding: 30px 40px;
+}
+
+.form-control{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.form-control label{
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+.form-control input{
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 16px;
+  border: 1px solid rgb(158, 158, 158);
+}
+
+
+.form-control i.fa-check{
+
+  position: absolute;
+  top: 35px;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 10px;
+  color: rgb(60, 199, 94);
+  visibility: hidden;
+
+}
+
+
+.form-control i.fa-close{
+
+  position: absolute;
+  top: 35px;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 10px;
+  color: rgb(199, 60, 60);
+  visibility: hidden;
+
+}
+
+.form-control input:focus{
+  outline: none;
+  border: 1px solid rgb(110, 110, 110)
+}
+
+.form-control small{
+  color: rgb(199, 60, 60);
+  visibility: hidden;
+}
+
+.form-control span{
+  font-size: 14px;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  margin-right: 30px;
+  visibility: hidden;
+
+
+}
+.form-control span.strong{
+  color: rgb(60, 199, 94);
+  visibility: hidden;
+
+}
+
+.form-control span.middle{
+  color: #ee9b00;
+  visibility: hidden;
+
+}
+
+.form-control span.week{
+  color: rgb(199, 60, 60);
+  visibility: hidden;
+
+}
+
+.form button.btn{
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #ee9b00;
+  color: #fff;
+
+}
+
+.btn span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+
+}
+
+.btn span:after {
+      content: '»';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+}
+
+.btn:hover span {
+      padding-right: 25px;
+}
+
+.btn:hover span:after {
+      opacity: 1;
+      right: 0;
+}
+
+.form-control .sucsess input{
+  border: 1px solid rgb(60, 199, 94);
+}
+
+.form-control.error input{
+  border: 1px solid rgb(199, 60, 60);
+}
+
+.form-control.error small{
+  visibility: visible;
+}
+
+.bground{
+  background-image: url("https://i.imgur.com/T3oWi7v.png");
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}

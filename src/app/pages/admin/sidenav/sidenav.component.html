@@ -1,0 +1,100 @@
+<nav class="main-menu">
+  <p *ngIf = "is_superuser == 'true'" >
+      <a routerLink="/dashboard" >Admin
+    </a> 
+</p>
+<p *ngIf = "is_superuser == 'false'" >
+    <a routerLink="/dashboard" >Author
+</a> 
+</p>
+  <ul>
+      <li *ngIf = "is_superuser == 'true'">
+          <a routerLink="account">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                 Accounts
+              </span>
+          </a>
+        
+      </li>
+      <li class="has-subnav">
+          <a routerLink="articles">
+              <i class="fa fa-laptop fa-2x"></i>
+              <span class="nav-text">
+                  Articles
+              </span>
+          </a>
+          
+      </li>
+      <li class="has-subnav">
+          <a routerLink="events">
+             <i class="fa fa-list fa-2x"></i>
+              <span class="nav-text">
+                  Events
+              </span>
+          </a>
+          
+      </li>
+      <li class="has-subnav">
+          <a routerLink="merchandise">
+             <i class="fa fa-folder-open fa-2x"></i>
+              <span class="nav-text">
+                  Merchandise
+              </span>
+          </a>
+         
+      </li>
+      <li>
+          <a routerLink="exhibit">
+              <i class="fa fa-bar-chart-o fa-2x"></i>
+              <span class="nav-text">
+                  Showroom
+              </span>
+          </a>
+      </li>
+      <li  *ngIf = "is_superuser == 'true'">
+        <a routerLink="teams">
+            <i class="fa fa-users"></i>
+            <span class="nav-text">
+               Teams
+            </span>
+        </a>
+    </li>
+      <li *ngIf = "is_superuser == 'true'">
+          <a routerLink="registered">
+              <i class="fa fa-font fa-2x"></i>
+              <span class="nav-text">
+                 Registered
+              </span>
+          </a>
+      </li>
+      <li>
+        <a routerLink="merch-order">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+            <span class="nav-text">
+               Merch Order
+            </span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="applicant">
+            <i class="fa fa-clipboard fa-2x"></i>
+            <span class="nav-text">
+               Applicants
+            </span>
+        </a>
+    </li>
+      
+  </ul>
+
+  <ul class="logout">
+      <li>
+         <a (click) = "logout()">
+               <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">
+                  Logout
+              </span>
+            </a>
+          </li> 
+  </ul>
+</nav>

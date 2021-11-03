@@ -1,0 +1,84 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Edit Showroom</h3>
+        <div>
+          <label>Showroom Title</label>
+          <input 
+          type = "text"
+          id = "Title"
+          class="Title"
+          [(ngModel)] = "Title"
+          >
+        </div>
+        <div>
+          <label>Author Name</label>
+          <input 
+          type = "text"
+          id = "AuthorName"
+          class="AuthorName"
+          [(ngModel)] = "AuthorName">
+        </div>
+        <div>
+          <label>Description</label><br>
+            <textarea 
+           
+            id = "Descirption"
+            class="Description"
+            [(ngModel)] = "Description">
+            </textarea>
+        </div>
+        
+        <div>
+          <label>Image</label><br>
+          <label>*Image must be 6000x3000</label><br>
+          <img 
+          *ngIf = "PhotoFileName !== null && photoUpload == true"
+          [src] = "PhotoFileName"
+          >
+          <img 
+          *ngIf = "PhotoFilePath !== null && photoUpload == false"
+          [src] = "PhotoFilePath"
+          >
+         <input 
+          type = "file"
+          id = "PhotoFileName"
+          class="PhotoFileName"
+          (change)="uploadPhoto($event)">
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date"
+              [(ngModel)]="StartDate"
+              >
+              <input matEndDate placeholder="v" 
+              [(ngModel)]="EndDate"
+              >
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+         </div>
+         <div>
+            <!--   
+          <input 
+          type = "text"
+          id = "category"
+          class="category"
+          [(ngModel)] = "category">
+           
+                -->
+          <select [(ngModel)]="category" (ngModelChange)="onChange($event)">
+            <option *ngFor="let state of states" [ngValue]="state.name">
+              {{ state.name }}
+            </option>
+          </select>
+    
+        </div>
+        <button class="submit"(click)="editShowroom()">Submit</button>
+    </div>
+    </div>
+         
+  

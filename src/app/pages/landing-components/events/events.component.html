@@ -1,0 +1,232 @@
+
+<section id="events" class="parallax-section">
+    <label class="labelz"><i>Click the Buildings!</i></label>
+	<div class="container">
+        
+        <div class="row">
+            <div class="wow col-md-6 fadeInUp " data-wow-delay="0.6s">
+                <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let merch of merchs;">
+                <ng-template carouselSlide>
+                    <div class="card">
+                        <img class="card-image" [src]="imageURL+merch.PhotoFileName" alt="">
+                        <h2 class="card-title">{{merch.mname}}</h2>
+                        <p class="card-price">{{merch.desc}}</p>
+                        <a [routerLink]="['/order', merch.id]">
+                        <button class="card-action">Order Now</button>
+                    </a>
+                    </div>
+                </ng-template>
+                </ng-container>
+                </owl-carousel-o>
+                </div>
+                <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+                  
+                    <img src='https://uapsaust.com/assets/img/roadmap.png' class="img-responsive" alt="Overview" usemap="#roadmap">
+                    <map name="roadmap">    
+                    <div *ngIf ="event1 != null || event1 != undefined">
+                       <!--Pin No. 1-->
+                    <div>
+                        <button (click)="openDialog()" class='pin-1' class="box" 
+                        *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event1.StartDate | date: 'MM/dd/yy' )
+                        && (todaysDate|date:'MM/dd/yy')<=(event1.EndDate | date: 'MM/dd/yy')))">
+                        <label class="pin-text">Click the Buildings!</label>
+                        </button>
+                        <button class='pin-1' (click)="openConstruct()" class="boxz" 
+                        *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event1.StartDate | date: 'MM/dd/yy' )
+                        && (todaysDate|date:'MM/dd/yy')<(event1.EndDate | date: 'MM/dd/yy'))||
+                        (todaysDate| date: 'MM/dd/yy') > (event1.StartDate | date: 'MM/dd/yy'))">
+                        <label class="pin-text">Click the Buildings!</label>
+                        </button>
+                        
+                    </div>
+                    </div>
+                    <div *ngIf ="event2 != null || event2 != undefined">
+                        <!--Pin No. 2-->
+                     <div>
+                         <button (click)="openDialog2()" class='pin-1' class="box2" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event2.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event2.EndDate | date: 'MM/dd/yy')))">
+                        
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box2z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event2.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event2.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event2.StartDate | date: 'MM/dd/yy'))">
+                         <label class="pin-text">Click the Buildings!</label>
+                         </button>
+                     </div>
+                     </div>
+                     <div *ngIf ="event3 != null || event3 != undefined">
+                        <!--Pin No. 3-->
+                     <div>
+                         <button (click)="openDialog3()" class='pin-1' class="box3" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event3.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event3.EndDate | date: 'MM/dd/yy')))">
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box3z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event3.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event3.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event3.StartDate | date: 'MM/dd/yy'))">
+                         </button>
+                     </div>
+                     </div>
+                     <div *ngIf ="event4 != null || event4 != undefined">
+                        <!--Pin No. 4-->
+                     <div>
+                         <button (click)="openDialog4()" class='pin-1' class="box4" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event4.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event4.EndDate | date: 'MM/dd/yy')))">
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box4z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event4.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event4.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event4.StartDate | date: 'MM/dd/yy'))">
+                         </button>
+                     </div>
+                     </div>
+                     <div *ngIf ="event5 != null || event5 != undefined">
+                        <!--Pin No. 5-->
+                     <div>
+                         <button (click)="openDialog5()" class='pin-1' class="box5" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event5.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event5.EndDate | date: 'MM/dd/yy')))">
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box5z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event5.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event5.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event5.StartDate | date: 'MM/dd/yy'))">
+                         </button>
+                     </div>
+                     </div>
+                     <div *ngIf ="event6 != null || event6 != undefined">
+                        <!--Pin No. 6-->
+                     <div>
+                         <button (click)="openDialog6()" class='pin-1' class="box6" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event6.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event6.EndDate | date: 'MM/dd/yy')))">
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box6z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event6.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event6.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event6.StartDate | date: 'MM/dd/yy'))">
+                         </button>
+                     </div>
+                     </div>
+                     <div *ngIf ="event7 != null || event7 != undefined">
+                        <!--Pin No. 7-->
+                     <div>
+                         <button (click)="openDialog7()" class='pin-1' class="box7" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )>=( event7.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<=(event7.EndDate | date: 'MM/dd/yy')))">
+                         </button>
+                         <button class='pin-1' (click)="openConstruct()" class="box7z" 
+                         *ngIf = "(((todaysDate|date:'MM/dd/yy' )<( event7.StartDate | date: 'MM/dd/yy' )
+                         && (todaysDate|date:'MM/dd/yy')<(event7.EndDate | date: 'MM/dd/yy'))||
+                         (todaysDate| date: 'MM/dd/yy') > (event7.StartDate | date: 'MM/dd/yy'))">
+                         </button>
+                     </div>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="boxz" 
+                        *ngIf = "event1 == undefined || event1 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box2z" 
+                        *ngIf = "event2 == undefined || event2 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box3z" 
+                        *ngIf = "event3 == undefined || event3 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box4z" 
+                        *ngIf = "event4 == undefined || event4 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box5z" 
+                        *ngIf = "event5 == undefined || event5 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box6z" 
+                        *ngIf = "event6 == undefined || event6 == null">
+                        </button>
+                     </div>
+                     <div>
+                        <button class='pin-1' (click)="openConstruct()" class="box7z" 
+                        *ngIf = "event7 == undefined || event7 == null">
+                        </button>
+                     </div>
+               </map>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #callAPIDialog>
+    <a href={{event1.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event1.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labela"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog2>
+    <a href={{event2.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event2.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog3>
+    <a href={{event3.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event3.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog4>
+    <a href={{event4.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event4.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog5>
+    <a href={{event5.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event5.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog6>
+    <a href={{event6.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event6.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+<ng-template #callAPIDialog7>
+    <a href={{event7.eventLink}} target="_blank">
+    <img class="test" [src]="imageURLz+event7.PhotoFileName">
+    </a>
+    <br>
+    <br>
+    <label class="labelz"> Click the Image To Join our Google Meet/Zoom!</label>
+</ng-template>
+
+<ng-template #construct>
+    <img class="testz" src="../../../../assets/img/underconstruction.png">
+   
+</ng-template>
+

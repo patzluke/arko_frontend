@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Edit Event</h3>
+      <label>All of These Fields are Required</label>
+        <div>
+          <label>Event Name</label>
+          <input 
+          type = "text"
+          id = "eventName"
+          class="eventName"
+          [(ngModel)] = "eventName">
+          
+        </div>
+        <div>
+          <label>Event Link</label>
+          <input 
+          type = "text"
+          id = "eventLink"
+          class="eventLink"
+          [(ngModel)] = "eventLink">
+        </div>
+          <div>
+            <label>Event Poster</label><br>
+            <label>*Image must be 1920x1920</label><br>
+            <img 
+            *ngIf = "PhotoFileName !== null && photoUpload == true"
+            [src] = "PhotoFileName"
+            >
+            <img 
+            *ngIf = "PhotoFilePath !== null && photoUpload == false"
+            [src] = "PhotoFilePath"
+            >
+           <input 
+            type = "file"
+            id = "PhotoFileName"
+            class="PhotoFileName"
+            
+            (change)="uploadPhoto($event)">
+           
+          </div>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date"
+                
+                [(ngModel)]="StartDate"
+                >
+                <input matEndDate placeholder="End date" 
+                
+                [(ngModel)]="EndDate"
+                >
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+           </div>
+        <button class="submit"(click)="editEvent()">Submit</button>
+    </div>
+    </div>
+         
+  

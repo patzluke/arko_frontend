@@ -1,0 +1,41 @@
+<div class= "bground">
+	<div class= "continer">
+	  <form (ngSubmit)="userLoginz(f)" #f="ngForm" class = "form">
+		<img src="assets\img\160X160 UAPSA LOGO.png"
+		style ="width:100px; margin-left: auto;  margin-right: auto; display: block;
+		"class="img-fluid">
+	  <div class="form-group">
+		  <h4>UAPSA Arko Login</h4>
+		<label>Email</label>
+		<input
+		type = "email"
+		id="name"
+		class="form-control"
+		ngModel
+		name="email"
+		required
+		email
+		#email = "ngModel"
+		>
+		<span class ="help-block" *ngIf="!email.valid && email.touched" >UST Email</span>
+	  </div>
+	  <div class = "form-group">
+	  <label>Password</label>
+			<input
+			type = "password"
+			id="password"
+			class="form-control"
+			ngModel
+			name="password"
+			required>
+		  </div>
+		  <div>
+			  <button class="btn"
+		  type="submit"
+		  [disabled] = "!f.valid"><span>Login</span></button>
+			</div>
+			<br>
+			<a href="https://uapsaust.com/api/Accounts/forget-password/"> Forgot Password?</a>
+	  </form>
+	</div>
+  </div>

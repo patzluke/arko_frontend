@@ -1,0 +1,74 @@
+<section id="exhibit" class="parallax-section">
+
+
+
+
+
+<div>
+  <div class="inner-header flex">
+    <img src="assets/img/160X160 UAPSA LOGO.png" class="logo">
+  <h1>UAPSA UST Showroom</h1>
+  </div>
+  <div class="centershow">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let showroom of showrooms;">
+    <ng-template carouselSlide>
+        <button (click)="openDialog()">
+            <img class="card-image" [src]="imageURL+showroom.PhotoFileName" alt="">
+        </button>
+    </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+  <br>
+<button class="buttun" (click)="openDialog()">UAPSA's Showroom!</button>
+
+</div>
+
+
+
+
+
+<ng-template #callAPIDialogz>
+  <form #regform="ngForm" (ngSubmit)="onReg(regform)" class="center">
+  <h2 matDialogTitle>3-D Showroom Register</h2>
+  <label>First Name</label><br>
+    <input 
+    type="text"
+    ngModel
+    name="firstname"><br>
+  <label>Last Name</label><br>
+    <input 
+    type="text"
+    ngModel
+    name="lastname"><br>
+  <label>Email</label><br>
+    <input 
+    type="email"
+    ngModel
+    name="email"><br>
+  <button type="submit">Submit</button>
+</form>
+</ng-template>
+
+<ng-template #callAPIDialog>
+  <form #userForm="ngForm" (ngSubmit)="onSend(userForm)" class="center">
+  <h2 matDialogTitle>3-D Showroom Entrance</h2>
+  <label>Email</label><br>
+    <input 
+    type="email"
+    ngModel
+    name="email"><br>
+  <label>Ticket No.</label><br>
+    <input 
+    type="text"
+    ngModel
+    name="password"><br>
+  <button type="submit">Enter</button>
+
+  
+</form>
+<label class="labelz">Haven't Registered yet?</label>
+<button id="reg"(click)="openReg()">Register</button>
+</ng-template>
+</section>

@@ -1,0 +1,44 @@
+
+<div class="container">
+   
+    <div class="main">
+        <h2>Events Management</h2>
+        <div class="right">
+          <div class = "buttonz">
+          <button class="btn btn-primary addz" routerLink="add" 
+          [disabled] = "Events.length >= 7" 
+          > Add 
+         
+        </button>
+      </div>
+      <span class = "message">Max Events have been Set</span>
+        </div>
+        <table>
+          <tr>
+            <th>Event Title</th>
+            <th>Event Link</th>
+            <th>Dates</th>
+          </tr>
+          <tr
+          *ngFor = "let event of Events | paginate: { itemsPerPage: 5, currentPage: p }">
+         <td>
+          {{event.eventName}}
+         </td>
+         <td>
+          {{event.eventLink}}
+        </td>
+         <td>
+           {{event.StartDate | date:"MM/dd/yy"}} - {{event.EndDate | date:"MM/dd/yy"}}
+         </td>
+         <td>
+          <a class="btn btn-primary" [routerLink]="['edit', event.id]">Edit</a>
+          <button class="btn btn-danger" (click) = "deleteClick(event)">Delete</button>
+         </td>
+          </tr>
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+    </div>
+         
+  </div>
+
+ 

@@ -1,0 +1,68 @@
+
+<div class="container">
+    <div class="main">
+      <h3>Add Team</h3>
+      <label>All of These Fields are Required</label>
+      <form (ngSubmit)="addTeam(f)" #f="ngForm">
+      <div class="form-group">
+      <label>Team Member Image</label><br>
+      <label>*Image must be 1x1</label><br>
+      <img [src] = "PhotoFilePath">
+      <input type="file"
+      id = "PhotoFileName"
+      class="form-control"
+      name = "PhotoFileName"
+      required
+      (change)="uploadPhoto($event)">
+      <label>Team Member Name</label>
+       <input 
+       type = "text"
+       id="eventName"
+       class="form-control"
+       ngModel
+       name="name"
+       required
+       pattern="[a-z A-Z]+">
+       <label>Team Section</label>
+       <input 
+       type = "text"
+       id="eventName"
+       class="form-control"
+       ngModel
+       name="section"
+       required
+       >
+       <div class="form-group">
+        <label for="mname">Year Level</label><br>
+        <select name="state" ngModel name="year">
+            <option value="" disabled>Year Level</option>
+            <option *ngFor="let level of yearLevel" [ngValue]="level">
+              {{ level.level }}
+            </option>
+          </select>
+    </div>
+        <label>Team Position</label>
+        <input 
+        type = "text"
+        id="eventName"
+        class="form-control"
+        ngModel
+        name="position"
+        required
+        pattern="[a-z A-Z]+">
+        <label>Team Description</label><br>
+        <textarea id="w3review" name="w3review" rows="4" cols="50" ngModel name = "description">
+            
+        </textarea>
+    </div>
+      <div>
+        <button type="submit" class = "btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    </div>
+
+
+    </div>
+         
+  

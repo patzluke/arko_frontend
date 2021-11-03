@@ -1,0 +1,41 @@
+
+<div class="container">
+   
+  <div class="main">
+      <h2>Showroom Management</h2>
+      <div class="right">
+        <a class="btn btn-primary" routerLink="add"> Add </a>
+      </div>
+      <table>
+        <tr>
+          <th>Showroom Title</th>
+          <th>Showroom Author</th>
+          <th>Dates</th>
+          <th>View Count</th>
+          <th> </th>
+        </tr>
+        <tr
+        *ngFor = "let showroom of showrooms | paginate: { itemsPerPage: 5, currentPage: p }">
+       <td>
+        {{showroom.Title}}
+       </td>
+       <td>
+        {{showroom.AuthorName}}
+      </td>
+      <td>
+        {{showroom.StartDate| date:"MM/dd/yy"}} {{showroom.EndDate| date:"MM/dd/yy"}}
+      </td>
+      <td>
+        {{showroom.viewCount}}
+      </td>
+       <td>
+        <a class="btn btn-primary" [routerLink]="['edit', showroom.id]">Edit</a>
+          <button class="btn btn-danger" (click) = "deleteClick(showroom)">Delete</button>
+       </td>
+        </tr>
+        
+      </table>
+      <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+  </div>
+       
+</div>

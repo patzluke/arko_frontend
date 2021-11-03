@@ -1,0 +1,39 @@
+<section id="articles" class="parallax-section">
+    <div class="row">
+          <div class = "row2">
+        <div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+            <h2>Articles</h2>
+            <h3>Quisque ut libero sapien. Integer tellus nisl, efficitur sed dolor at, vehicula finibus massa. Sed tincidunt metus sed eleifend suscipit.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet consectetuer diam nonummy.</p>
+            <div class = "buttones">
+                <br>
+              <button class="button-two wow fadeInUp" data-wow-delay="1.3s" (click)="onMoreArticles() "><span>See More</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div data-wow-delay="1.6s" *ngFor="let article of articles let i = index">
+        <div class="padders">
+          <div class='module thumbnail' *ngIf = "i < 1">
+            <a [routerLink]="['/article', article.id, article.title]">
+            <img [src]="imageURL+article.PhotoFileName" alt="Avatar">
+            <div class='date'>
+              <div>{{article.dateCreated | date: "dd"}}</div>
+              <div>{{article.dateCreated | date: "MMM"}}</div>
+            </div>
+          <div class='content'>
+            <div class="category">Photos</div>
+            <h2 class='title'>{{article.title}}</h2>
+            <h3 class='sub-title'>created by: {{article.authorName}}</h3>
+            <p class="description">{{article.desc}}</p>
+           </div>
+          </a>
+        </div>
+       
+      </div>
+
+      
+    </div>
+  </div>
+
+</section>

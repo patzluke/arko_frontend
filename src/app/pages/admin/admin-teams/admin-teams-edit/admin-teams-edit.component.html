@@ -1,0 +1,69 @@
+
+<div class="container">
+  <div class="main">
+    <h3>Edit Team</h3>
+    <div>
+      <label>Team Photo</label><br>
+      <label>*Image must be 1x1</label><br>
+      <img 
+      *ngIf = "PhotoFileName !== null && photoUpload == true"
+      [src] = "PhotoFileName"
+      >
+      <img 
+      *ngIf = "PhotoFilePath !== null && photoUpload == false"
+      [src] = "PhotoFilePath"
+      >
+     <input 
+      type = "file"
+      id = "PhotoFileName"
+      class="PhotoFileName"
+      
+      (change)="uploadPhoto($event)">
+     
+    </div>
+      <div>
+        <label>Team Name</label>
+        <input 
+        type = "text"
+        id = "name"
+        class="name"
+        [(ngModel)] = "name">
+      </div>
+      <div>
+        <label>Team Section</label>
+        <input 
+        type = "text"
+        id = "section"
+        class="section"
+        [(ngModel)] = "section">
+      </div>
+      <div>
+        <label>Team Description</label><br>
+        <textarea 
+        type = "text"
+        id = "section"
+        class="section"
+        [(ngModel)] = "description">
+        </textarea>
+      </div>
+      <div>
+        <label>Team Position</label><br>
+        <input 
+        type = "text"
+        id = "section"
+        class="section"
+        [(ngModel)] = "position">
+      </div>
+      <div>
+      <label> Year </label><br>
+      <select [(ngModel)]="year" (ngModelChange)="onChange($event)" name="sel2">
+        <option *ngFor="let level of yearLevel" [ngValue]="level.level">
+          {{ level.level }}
+        </option>
+    </select><br>
+  
+  </div>
+      <button class="submit"(click)="editTeam()">Submit</button>
+  </div>
+  </div>
+       

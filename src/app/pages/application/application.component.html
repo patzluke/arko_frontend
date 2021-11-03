@@ -1,0 +1,153 @@
+<html>
+  <body>
+    <div class="card">
+      <div class="card-description">
+        <div class="wrapper">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class = "form">
+                <div id="user-data">
+                  <img src="./assets/img/HEADER LOGO.png"
+                  style ="width:200px; margin-left: auto;  margin-right: auto; display: block;
+                  "class="img-fluid">
+                    <div class="form-group">
+                      <h2>Membership Form</h2>
+                        <label for="name">Full Name</label>
+                        <input type="text"
+                        id="name"
+                        class="form-control"
+                        ngModel
+                        name="name"
+                        required>
+                    </div>
+                    <div class="form-group">
+                          <label for="name">Age</label>
+                          <input type="number"
+                          id="name"
+                          class="form-control"
+                          ngModel
+                          name="age"
+                          onkeypress="return event.charCode>=48 && event.charCode<=57"
+                          required>
+                      </div>
+                    <div class="form-group">
+                        <label for="student-no">UST Student No.</label>
+                        <input
+                        type="text"
+                        id="student-no"
+                        class="form-control"
+                        ngModel
+                        name="studentNo"
+                        onkeypress="return event.charCode>=48 && event.charCode<=57"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">UST Email Address</label>
+                        <input type="text"
+                        id="email"
+                        class="form-control"
+                        ngModel
+                        name="ustEmail"
+                        required
+                        email
+                        #email = "ngModel"
+                        pattern=".+@ust.edu.ph">
+                    <span class ="help-block" *ngIf="!email.valid && email.touched" >Enter a Valid UST Email Address</span>
+                    </div><br>
+                    <div class="form-group">
+                        <select name="state" ngModel name="year">
+                            <option value="" disabled>Year Level</option>
+                            <option *ngFor="let level of yearLevel" [ngValue]="level">
+                              {{ level.level }}
+                            </option>
+                          </select>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="contact">Sex</label><br>
+                        <input type="radio" id="html" name="Sex" value="Male" ngModel>
+                        <label for="html">Male</label><br>
+                        <input type="radio" id="css" name="Sex" value="Female" ngModel>
+                        <label for="css">Female</label><br>
+                     </div><br>
+                    <div class="form-group">
+                        <label for="section">Section</label>
+                        <input type="text"
+                        id="section"
+                        class="form-control"
+                        ngModel
+                        name="section"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Birthday</label>
+                        <input type="date"
+                        class="form-control"
+                        ngModel
+                        name="birthDate"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Member Status</label><br>
+                        <input type="radio" id="html" name="membershipStatus" value="New" ngModel >
+                        <label for="html">New</label><br>
+                        <input type="radio" id="css" name="membershipStatus" value="Renew" ngModel>
+                        <label for="css">Renew</label><br>
+                     </div>
+                     <div class="form-group">
+                        <label for="section">Contact No.</label>
+                        <input type="text"
+                        id="section"
+                        class="form-control"
+                        ngModel
+                        name="contact"
+                        onkeypress="return event.charCode>=48 && event.charCode<=57"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="section">Address</label>
+                        <input type="text"
+                        id="section"
+                        class="form-control"
+                        ngModel
+                        name="address"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="section">Facebook Link</label>
+                        <input type="text"
+                        id="section"
+                        class="form-control"
+                        ngModel
+                        name="facebookLink"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">What are you looking forward to in UAPSA?</label>
+                        <textarea id="w3review" name="w3review" rows="4" cols="50" ngModel name = "lookingForward">
+                            
+                        </textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="contact">If given the chance, what type of events would you create for UAPSA - UST? Share us your innovative ideas!</label>
+                        <textarea id="w3review" name="w3review" rows="4" cols="50" ngModel name = "typeOfEvents">
+                            
+                        </textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="contact">What topics are you interested for us to cover in our online webinars and talks?</label>
+                        <textarea id="w3review" name="w3review" rows="4" cols="50"ngModel name = "topicsIntrested">
+                            
+                        </textarea>
+                     </div>
+                    <div>
+                    <button class="btn"
+                        type="submit"
+                        [disabled] = "!f.valid">
+                        <span>Submit Application</span>
+                    </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
